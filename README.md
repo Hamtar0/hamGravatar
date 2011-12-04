@@ -1,4 +1,4 @@
-![Gravatar](http://cl.ly/3e1y2a1P2v2W3h0m3w0L/hamGravatar.jpg)
+![Gravatar](http://www.customtaro.fr/blog/data/images/previews/745.jpg)
 
 Après quelques temps à bidouiller dans mon coin et avec l'aide de Stéphane (une partie du code permettant la reconnaissance des comptes utilisateurs inscrits), un des développeurs, je sors enfin un petit plugin pour le CMS Pluxml : hamGravatar.
 
