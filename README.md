@@ -1,15 +1,4 @@
 ![Gravatar](http://f.cl.ly/items/183B06222E1t2D2V2O2g/hamGravatar.jpg)
-
-Après quelques temps à bidouiller dans mon coin et avec l'aide de Stéphane (une partie du code permettant la reconnaissance des comptes utilisateurs inscrits), un des développeurs, je sors enfin un petit plugin pour le CMS Pluxml : hamGravatar.
-
-Le nom est simple à comprendre : ham pour Hamtaro donc moi, et Gravatar puisqu'il s'agit d'un plugin permettant l'utilisation du [service Gravatar](http://fr.gravatar.com/) avec les commentaires de Pluxml.  
-Attention toutefois, je tiens à prévenir les futurs utilisateur de ce plugin, il est dédié à des personnes ayant quelques notions d'intégration.
-
-En effet, le code fournit par ce plugin permet uniquement de récupérer un URL généré grâce aux mails des commentateurs. Aisni, il faut l'exploiter, c'est à dire, l'utiliser dans une balise img et l'intégrer correctement à votre thème.  
-Cependant, vu que je suis pas méchant, tout est expliqué dans la partie Aide du plugin.
+![Gravatar Admin](http://f.cl.ly/items/0Y342a2s302R0W143I3o/Capture%20d%E2%80%99%C3%A9cran%202013-11-17%20%C3%A0%2018.32.39.jpg)
 
 Je suis ouvert à toute idée d'amélioration et suis disponible si vous avez des soucis. ;)
-
-Tcho, Hamtaro.
-
-Lien : [télécharger hamGravatar](http://cl.ly/0o1x0x0f2f182g2y0b2K).
