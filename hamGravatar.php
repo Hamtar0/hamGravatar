@@ -17,16 +17,15 @@ class hamGravatar extends plxPlugin {
 
 		# Ajouts des hooks
 		$this->addHook('hamGravatar', 'hamGravatar');
-		$this->addHook('AdminTopEndHead', 'AdminTopEndHead');
 		$this->addHook('AdminUsersFoot', 'AdminUsersFoot');
 		$this->addHook('AdminProfilTop', 'AdminProfilTop');
 		$this->addHook('AdminUserTop', 'AdminUserTop');
+		$this->addHook('ThemeEndBody', 'ThemeEndBody');
+		$this->addHook('ThemeEndHead', 'ThemeEndHead');
 		
 	}
 	
-	public function AdminTopEndHead() {?>
-
-        
+	public function AdminUsersFoot() {?>
 		<script type="text/javascript">
 		/* <![CDATA[ */
 		if (typeof jQuery == 'undefined') {
@@ -34,11 +33,6 @@ class hamGravatar extends plxPlugin {
 		}
 		/* ]]> */
 		</script>
-
-		<?php
-	}
-	
-	public function AdminUsersFoot() {?>
 		
 		<?php 
 					
@@ -81,6 +75,13 @@ class hamGravatar extends plxPlugin {
 	}
 	
 	public function AdminUserTop() {?>
+		<script type="text/javascript">
+		/* <![CDATA[ */
+		if (typeof jQuery == 'undefined') {
+			document.write('<script type="text\/javascript" src="<?php echo PLX_PLUGINS ?>hamGravatar\/js/jquery-1.10.2.min.js"><\/script>');
+		}
+		/* ]]> */
+		</script>
 		
 		<script type="text/javascript" src="<?php echo PLX_PLUGINS ?>hamGravatar/js/md5.js"></script>
 		<script type="text/javascript">
@@ -115,6 +116,13 @@ class hamGravatar extends plxPlugin {
 	}
 	
 	public function AdminProfilTop() {?>
+		<script type="text/javascript">
+		/* <![CDATA[ */
+		if (typeof jQuery == 'undefined') {
+			document.write('<script type="text\/javascript" src="<?php echo PLX_PLUGINS ?>hamGravatar\/js/jquery-1.10.2.min.js"><\/script>');
+		}
+		/* ]]> */
+		</script>
 		
 		<script type="text/javascript" src="<?php echo PLX_PLUGINS ?>hamGravatar/js/md5.js"></script>
 		<script type="text/javascript">
@@ -146,6 +154,58 @@ class hamGravatar extends plxPlugin {
 		</script>
 
 		<?php
+	}
+	
+	public function ThemeEndBody() {
+		if ($this->getParam('activate_textarea') =='ok') {
+	?>
+		
+		<script type="text/javascript" src="<?php echo PLX_PLUGINS ?>hamGravatar/js/md5.js"></script>
+		<script type="text/javascript">
+		/* <![CDATA[ */
+		$(document).ready(function(){
+					
+			function calculateGravatar(emailAddress) {
+				var grav ='';
+				var email = emailAddress.toLowerCase().trim();
+				var hash = CryptoJS.MD5(email);
+				grav = 'http://www.gravatar.com/avatar/'+hash+'?s=50&r=g&d=mm'
+				return grav;
+			}
+					
+			var email = $('input[name="mail"]');
+			
+			console.log(email.val());
+					
+			var gravatarimg = calculateGravatar( email.val() );
+					
+			$('textarea[name="content"]').css('background', 'url("' + gravatarimg + '") no-repeat bottom 5px right 5px ');
+					
+			email.blur(function() {
+				var gravatarimg = calculateGravatar( email.val() );
+				$('textarea[name="content"]').css('background', 'url("' + gravatarimg + '") no-repeat bottom 5px right 5px ');
+			});
+					
+	
+		});
+		/* ]]> */
+		</script>
+
+		<?php }
+	}
+	
+	public function ThemeEndHead() {
+		if ($this->getParam('activate_textarea') =='ok') {
+	?>
+		<script type="text/javascript">
+		/* <![CDATA[ */
+		if (typeof jQuery == 'undefined') {
+			document.write('<script type="text\/javascript" src="<?php echo PLX_PLUGINS ?>hamGravatar\/js/jquery-1.10.2.min.js"><\/script>');
+		}
+		/* ]]> */
+		</script>
+
+		<?php }
 	}
 	
 	public function hamGravatar () {
