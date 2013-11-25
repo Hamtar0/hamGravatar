@@ -38,7 +38,9 @@ $(document).ready(function(){
 		var grav ='';
 		var email = emailAddress.toLowerCase().trim();
 		var hash = CryptoJS.MD5(email);
-		grav = 'http://www.gravatar.com/avatar/'+hash+'?s=50&r=g&d=mm'
+		var rated = '<?php echo plxUtils::strCheck($plxPlugin->getParam('hamGravatar_rated')) ?>';
+		var defaut = '<?php echo plxUtils::strCheck($plxPlugin->getParam('hamGravatar_defaut')) ?>';
+		grav = 'http://www.gravatar.com/avatar/'+hash+'?s=50&r='+rated+'&d='+defaut;
 		return grav;
 	}
 			

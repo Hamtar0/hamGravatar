@@ -34,11 +34,8 @@ class hamGravatar extends plxPlugin {
 		/* ]]> */
 		</script>
 		
-		<?php 
-					
-		echo '<?php $table_profils = json_encode($plxAdmin->aUsers); ?>';
-			
-		?>
+		<?php echo '<?php $table_profils = json_encode($plxAdmin->aUsers); ?>'; ?>
+		
 		<script type="text/javascript" src="<?php echo PLX_PLUGINS ?>hamGravatar/js/md5.js"></script>
 		<style type="text/css">th.gravatar {width:55px;}</style>
 		<script type="text/javascript">
@@ -49,7 +46,9 @@ class hamGravatar extends plxPlugin {
 				var grav ='';
 				var email = emailAddress.toLowerCase().trim();
 				var hash = CryptoJS.MD5(email);
-				grav = 'http://www.gravatar.com/avatar/'+hash+'?s=50&r=g&d=mm'
+				var rated = '<?php echo $this->getParam('hamGravatar_rated'); ?>';
+				var defaut = '<?php echo $this->getParam('hamGravatar_defaut'); ?>';
+				grav = 'http://www.gravatar.com/avatar/'+hash+'?s=50&r='+rated+'&d='+defaut;
 				return grav;
 			}
 
@@ -92,7 +91,9 @@ class hamGravatar extends plxPlugin {
 				var grav ='';
 				var email = emailAddress.toLowerCase().trim();
 				var hash = CryptoJS.MD5(email);
-				grav = 'http://www.gravatar.com/avatar/'+hash+'?s=150&r=g&d=mm'
+				var rated = '<?php echo $this->getParam('hamGravatar_rated'); ?>';
+				var defaut = '<?php echo $this->getParam('hamGravatar_defaut'); ?>';
+				grav = 'http://www.gravatar.com/avatar/'+hash+'?s=150&r='+rated+'&d='+defaut;
 				return grav;
 			}
 					
@@ -133,7 +134,9 @@ class hamGravatar extends plxPlugin {
 				var grav ='';
 				var email = emailAddress.toLowerCase().trim();
 				var hash = CryptoJS.MD5(email);
-				grav = 'http://www.gravatar.com/avatar/'+hash+'?s=150&r=g&d=mm'
+				var rated = '<?php echo $this->getParam('hamGravatar_rated'); ?>';
+				var defaut = '<?php echo $this->getParam('hamGravatar_defaut'); ?>';
+				grav = 'http://www.gravatar.com/avatar/'+hash+'?s=150&r='+rated+'&d='+defaut;
 				return grav;
 			}
 				
@@ -169,7 +172,9 @@ class hamGravatar extends plxPlugin {
 				var grav ='';
 				var email = emailAddress.toLowerCase().trim();
 				var hash = CryptoJS.MD5(email);
-				grav = 'http://www.gravatar.com/avatar/'+hash+'?s=50&r=g&d=mm'
+				var rated = '<?php echo $this->getParam('hamGravatar_rated'); ?>';
+				var defaut = '<?php echo $this->getParam('hamGravatar_defaut'); ?>';
+				grav = 'http://www.gravatar.com/avatar/'+hash+'?s=50&r='+rated+'&d='+defaut;
 				return grav;
 			}
 					
