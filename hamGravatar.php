@@ -14,6 +14,7 @@ class hamGravatar extends plxPlugin {
 		
 		# droits pour accéder ‡ la page config.php du plugin
 		$this->setConfigProfil(PROFIL_ADMIN);
+		$this->setAdminProfil(PROFIL_ADMIN);
 
 		# Ajouts des hooks
 		$this->addHook('hamGravatar', 'hamGravatar');
