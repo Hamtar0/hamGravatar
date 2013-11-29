@@ -65,6 +65,19 @@ $(document).ready(function(){
 <!--
   @import url("<?php echo PLX_PLUGINS ?>hamGravatar/css/bootstrap.min.css");
 -->
+    .dp
+    {
+        border:10px solid #eee;
+        transition: all 0.2s ease-in-out;
+    }
+    .dp:hover
+    {
+        border:2px solid #eee;
+        transform:rotate(360deg);
+        -ms-transform:rotate(360deg);  
+        -webkit-transform:rotate(360deg);  
+        /*-webkit-font-smoothing:antialiased;*/
+    }
 </style>
 <div class="container pull-left">
 	<ol class="breadcrumb">
@@ -72,6 +85,34 @@ $(document).ready(function(){
 	  <li><a href="./parametres_plugins.php">Plugins</a></li>
 	  <li class="active"><?php echo $plxPlugin->getInfo('title') ?> - Version <?php echo $plxPlugin->getInfo('version') ?> - <?php echo $plxPlugin->getInfo('date') ?></li>
 	</ol>
+	
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+		<h3 class="panel-title">Vos informations</h3>
+		</div>
+		<div class="panel-body">
+				<?php
+				$email_hash = md5( strtolower( trim( plxUtils::strCheck($plxAdmin->aUsers[$_SESSION['user']]['email']) ) ) );
+				$img_url = 'http://www.gravatar.com/avatar/'.$email_hash.'?s=100&d=mm';
+				?>
+			        <div class="media">
+			            <a class="pull-left" href="./profil.php">
+			                <img class="media-object dp img-circle" src="<?php echo $img_url; ?>" style="width: 100px;height:100px;">
+			            </a>
+			            <div class="media-body">
+			                <h4 class="media-heading"><?php echo plxUtils::strCheck($plxAdmin->aUsers[$_SESSION['user']]['name']); ?> <small> <?php echo plxUtils::strCheck($plxAdmin->aUsers[$_SESSION['user']]['email']); ?></small></h4>
+			                <?php if ($plxAdmin->aUsers[$_SESSION['user']]['infos'] == '') { echo 'Votre description de profil est vide.<br/> Pourquoi ne pas la remplir ?';} else { echo $plxAdmin->aUsers[$_SESSION['user']]['infos']; }  ?>
+			                <hr style="margin:8px auto">
+
+			                <span class="label label-default">Utilisateur <?php echo plxUtils::strCheck($_SESSION['user']); ?></span>
+			                <span class="label label-default">Langue <?php echo plxUtils::strCheck($plxAdmin->aUsers[$_SESSION['user']]['lang']); ?></span>
+			                <span class="label label-info"><?php if (plxUtils::strCheck($plxAdmin->aUsers[$_SESSION['user']]['profil']) == 0) { echo 'Administrateur'; } ?></span>
+			                <span class="label label-default"><?php echo plxUtils::strCheck($plxAdmin->aUsers[$_SESSION['user']]['login']); ?></span>
+			            </div>
+			        </div>
+		</div>
+	</div>
+			
 	
 <form method="post" action="parametres_plugin.php?p=hamGravatar">
 	<div class="panel panel-primary">
