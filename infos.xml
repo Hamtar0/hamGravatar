@@ -1,8 +1,8 @@
 <document>
 	<title><![CDATA[hamGravatar]]></title>
 	<author><![CDATA[Damien Guillot]]></author>
-	<version>2.2</version>
-	<date>25/11/2013</date>
+	<version>2.3</version>
+	<date>29/11/2013</date>
 	<site>http://labo.customtaro.fr</site>
 	<description><![CDATA[Intégration du système Gravatar - www.gravatar.com]]></description>
 	<requirements></requirements>	
