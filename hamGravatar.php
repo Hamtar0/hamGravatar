@@ -102,11 +102,11 @@ class hamGravatar extends plxPlugin {
 
 			var gravatarimg = calculateGravatar( email.val() );
 
-			$('#content').css('background', 'url("' + gravatarimg + '") no-repeat top 20px right 20px ');
+			$('fieldset').css('background', 'url("' + gravatarimg + '") no-repeat top 20px right 20px ');
 
 			email.blur(function() {
 				var gravatarimg = calculateGravatar( email.val() );
-				$('#content').css('background', 'url("' + gravatarimg + '") no-repeat top 20px right 20px ');
+				$('fieldset').css('background', 'url("' + gravatarimg + '") no-repeat top 20px right 20px ');
 			});
 
 
