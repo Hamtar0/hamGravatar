@@ -18,15 +18,15 @@ Blabla HTML et PHP<br/>
 <br/>
 &lt;?php endwhile; ?&gt;<br/>
 </div>
-<p>Le plugin est fait de manière à vous laisser libre court pour l'intégration. C'est à dire que le code utilisé renvoit uniquement l'url de l'avatar.<br/>
-Donc pour une intégration parfaite et de manière générale, il faut dans insérer ce code pour avoir un affichage effectif.</p>
-<div class="code">&lt;img src=&quot;&lt;?php eval($plxShow-&gt;callHook(&#39;hamGravatar&#39;)) ?&gt;&quot; class=&quot;avatar&quot; /&gt;</div>
+<p>Le plugin est fait de manière à vous laisser libre cours pour l'intégration. C'est-à-dire que le code utilisé renvoit uniquement l'url de l'avatar.<br/>
+Donc pour une intégration parfaite et de manière générale, il faut l'insérer dans ce code pour avoir un affichage effectif.</p>
+<div class="code">&lt;img src=&quot;&lt;?php eval($plxShow-&gt;callHook(&#39;hamGravatar&#39;)) ?&gt;&quot; class=&quot;avatar&quot; alt=&quot;avatar&quot; /&gt;</div>
 <p>Donc pour terminer et simplifier, le code final de votre boucle de commentaires doit être structuré de cette manière :</p>
 <div class="code">&lt;?php while($plxShow-&gt;plxMotor-&gt;plxRecord_coms-&gt;loop()): ?&gt;<br/>
 <br/>
 Blabla HTML et PHP<br/>
 <br/>
-&lt;img src=&quot;&lt;?php eval($plxShow-&gt;callHook(&#39;hamGravatar&#39;)) ?&gt;&quot; class=&quot;avatar&quot; /&gt;<br/>
+&lt;img src=&quot;&lt;?php eval($plxShow-&gt;callHook(&#39;hamGravatar&#39;)) ?&gt;&quot; class=&quot;avatar&quot; alt=&quot;avatar&quot; /&gt;<br/>
 <br/>
 Blabla HTML et PHP<br/>
 <br/>
